@@ -3,6 +3,7 @@ import Navigation from "./components/Common/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React from "react";
 import Footer from './components/Common/Footer/Footer';
+import Banner from './components/Pages/Banner/Banner';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
             {/* Main Content */}
             <div className="lg:flex-1 absolute  w-full  top-36 px-8 scroll overflow-scroll">
               <Routes>
-               
+              {/* <Route path="/" element={<Dashboard />} /> */}
+              <Route path="/banner" element={<Banner />} />
               </Routes>
               <Footer />
             </div>
