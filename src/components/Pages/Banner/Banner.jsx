@@ -10,8 +10,7 @@ const Banner = () => {
       <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
       <InputField type="text" placeholder="Title" />
       <InputField type="text" placeholder="Subtitle" />        <FileUpload />
-        <Editor />
-      </div>{" "}
+        <Editor /><div></div>      </div>{" "}
     </div>
   );
 };
