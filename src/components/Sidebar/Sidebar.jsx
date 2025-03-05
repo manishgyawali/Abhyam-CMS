@@ -17,6 +17,8 @@ const Sidebar = () => {
     { title: "Popular Courses", icon: <PiCertificate />, path: "/popularcourses" },
     { title: "Milestonesection ", icon: <CiEdit />, path: "/milestonesection" },
     { title: "Why Choose Us", icon: <FaHandsHelping />, path: "/whychooseus" },
+    {title: "Our Partners", icon: <FaRegComments />, path: "/ourpartners"},
+    {title: "Testimonials", icon: <FaRegImages />, path: "/testimonials"},
 
 
    

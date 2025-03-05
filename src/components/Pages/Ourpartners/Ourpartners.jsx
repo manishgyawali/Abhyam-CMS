@@ -11,10 +11,8 @@ import { IoPencil } from 'react-icons/io5';
 
 
 const fields = [
+  { name: "title", type: "text", placeholder: "Title" },
   
-  { name: "subtitle", type: "text", placeholder: "Course" },
-  { name: "coursetype", type: "text", placeholder: "Coursetype" },
-  { name: "coursetype", type: "text", placeholder: "coursetitle" },
 ];
 
 
@@ -25,9 +23,9 @@ const validationSchema = Yup.object().shape({
   file: Yup.mixed().required("File is required!")
 });
 
-const notify = () => toast("Banner data submitted!");
+const notify = () => toast("Ourpartners data submitted!");
 
-const Popularcourses = () => {
+const Ourpartners = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
@@ -41,7 +39,6 @@ const Popularcourses = () => {
     {
       title: "Your Global Education Partner for Visa Success",
       subtitle: "Guiding you through every step of the process—student visas, test preparation, and beyond",
-      coursetitle: "Guiding you through every step of the process—student visas, test preparation, and beyond",
       image: "/Images/paypal.png",
     },
   ];
@@ -103,7 +100,7 @@ const Popularcourses = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Popularcourses' : 'Add Popularcourses'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Ourpartners' : 'Add Ourpartners'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -158,10 +155,9 @@ const Popularcourses = () => {
             <thead>
               <tr className="bg-gray-200 font-semibold">
                 <th className="p-4 text-left">Image</th>
-                <th className="p-4 text-left">Course</th>
-                <th className="p-4 text-left">Coursetype</th>
-                <th className="p-4 text-center">coursetitle</th>
-                <th className="p-4 text-center">Action</th>
+                <th className="p-4 text-left">Title</th>
+                <th className="p-4 text-left">Description</th>
+                <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -176,7 +172,6 @@ const Popularcourses = () => {
                   </td>
                   <td className="p-4">{val.title}</td>
                   <td className="p-4">{val.subtitle}</td>
-                    <td className="p-4">{val.coursetitle}</td>
                   <td className="p-4 text-center">
                     <button
                       onClick={() => handleEdit(index)}
@@ -195,4 +190,4 @@ const Popularcourses = () => {
   );
 };
 
-export default Popularcourses;
+export default Ourpartners;

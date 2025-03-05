@@ -8,6 +8,8 @@ import Aboutus from "./components/Pages/AboutUs/Aboutus";
 import Popularcourses from "./components/Pages/Popularcourses/Popularcourses";
 import Milestonesection from "./components/Pages/Milestonesection/Milestonesection";
 import Whychooseus from "./components/Pages/Whychooseus/Whychooseus";
+import Ourpartners from "./components/Pages/Ourpartners/Ourpartners";
+import Testinomials from "./components/Pages/Testinomials/Testinomials";
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
               <Route path="/popularcourses" element={<Popularcourses />} />
               <Route path="/milestonesection" element={<Milestonesection />} />
               <Route path="/whychooseus" element={<Whychooseus />} />
+              <Route path="/ourpartners" element={<Ourpartners />} />
+              <Route path="/testimonials" element={<Testinomials />} />
+              
 
               </Routes>
               <Footer />
