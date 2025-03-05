@@ -4,6 +4,10 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import React from "react";
 import Footer from './components/Common/Footer/Footer';
 import Banner from './components/Pages/Banner/Banner';
+import Aboutus from "./components/Pages/AboutUs/Aboutus";
+import Popularcourses from "./components/Pages/Popularcourses/Popularcourses";
+import Milestonesection from "./components/Pages/Milestonesection/Milestonesection";
+import Whychooseus from "./components/Pages/Whychooseus/Whychooseus";
 
 function App() {
   return (
@@ -25,6 +29,11 @@ function App() {
               <Routes>
               {/* <Route path="/" element={<Dashboard />} /> */}
               <Route path="/banner" element={<Banner />} />
+              <Route path="/aboutus" element={<Aboutus />} />
+              <Route path="/popularcourses" element={<Popularcourses />} />
+              <Route path="/milestonesection" element={<Milestonesection />} />
+              <Route path="/whychooseus" element={<Whychooseus />} />
+
               </Routes>
               <Footer />
             </div>

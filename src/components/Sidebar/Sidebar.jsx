@@ -7,27 +7,18 @@ import { MdOutlineContactMail, MdOutlineEventNote } from "react-icons/md";
 
 import { PiMapPinLine, PiCertificate } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import Milestonesection from "../Pages/Milestonesection/Milestonesection";
 
 const Sidebar = () => {
   const sidebarData = [
     { title: "Dashboard", icon: <IoHomeOutline />, path: "/" },
     { title: "Banner", icon: <CiViewBoard />, path: "/banner" },
-    { title: "Destinations", icon: <PiMapPinLine />, path: "/destinations" },
     { title: "About Us", icon: <IoPersonCircleOutline />, path: "/aboutus" },
-   
-    { title: "Testimonials", icon: <FaRegComments />, path: "/testimonials" },
-    {
-      title: "Get Success",
-      icon: <IoPersonCircleOutline />,
-      path: "/getsuccess",
-    },
-  
-    { title: "Contact Us", icon: <MdOutlineContactMail />, path: "/contactus" },
-    {
-      title: "Contact Inquiry",
-      icon: <MdOutlineContactMail />,
-      path: "/contactinquiry",
-    },
+    { title: "Popular Courses", icon: <PiCertificate />, path: "/popularcourses" },
+    { title: "Milestonesection ", icon: <CiEdit />, path: "/milestonesection" },
+    { title: "Why Choose Us", icon: <FaHandsHelping />, path: "/whychooseus" },
+
+
    
    {
       title: "Page Layout",

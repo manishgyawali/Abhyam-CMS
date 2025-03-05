@@ -5,7 +5,7 @@ import { TbMessage2Plus } from "react-icons/tb";
 
 const Navigation = () => {
   return (
-    <div className="bg-[#415FF2]  px-7 py-8 lg:pb-48 rounded-b-2xl flex items-center justify-between">
+    <div className="bg-primary  px-7 py-8 lg:pb-48 rounded-b-2xl flex items-center justify-between">
      {/* mobile navigation  */}
        <div className="lg:hidden">
           <RiMenu3Fill
@@ -17,11 +17,11 @@ const Navigation = () => {
         <input
           type="text"
           placeholder="Search here..."
-          className="w-48 p-2 pl-10 text-sm rounded-full bg-[#6280F9] text-white placeholder-white outline-none"
+          className="w-48 p-2 pl-10 text-sm rounded-full bg-white text-black placeholder-gray-500 outline-none"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 absolute top-2 left-3 text-white"
+          className="h-5 w-5 absolute top-2 left-3 text-black"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
