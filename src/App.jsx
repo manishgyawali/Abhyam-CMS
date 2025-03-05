@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import React from "react";
 import Footer from './components/Common/Footer/Footer';
 import Banner from './components/Pages/Banner/Banner';
+import AboutUs from './components/Pages/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
               <Routes>
               {/* <Route path="/" element={<Dashboard />} /> */}
               <Route path="/banner" element={<Banner />} />
+              <Route path="/aboutus" element={<AboutUs />} />
+
               </Routes>
               <Footer />
             </div>
