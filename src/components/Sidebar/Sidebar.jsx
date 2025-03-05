@@ -14,18 +14,21 @@ const Sidebar = () => {
     { title: "Dashboard", icon: <IoHomeOutline />, path: "/" },
     { title: "Banner", icon: <CiViewBoard />, path: "/banner" },
     { title: "About Us", icon: <IoPersonCircleOutline />, path: "/aboutus" },
-    { title: "Popular Courses", icon: <PiCertificate />, path: "/popularcourses" },
+    { title: "We are proudtop ", icon: <PiCertificate />, path: "/weareproudtop" },
     { title: "Milestonesection ", icon: <CiEdit />, path: "/milestonesection" },
     { title: "Why Choose Us", icon: <FaHandsHelping />, path: "/whychooseus" },
-
-
+    { title: "Blog and updates top ", icon: <CiEdit />, path: "/blogandupdatestop" },
+    { title: "Events and updates top", icon: <FaHandsHelping />, path: "/eventsandupdatestop" },
+    { title: "StudentTestimonial", icon: <FaHandsHelping />, path: "/studenttestimonial" },
    
    {
       title: "Page Layout",
       icon: <CiViewBoard />,
       subdata: [
-        // { title: "Destinations", path: "/destinationst" },
-        // { title: "Why Us", path: "/whyust" },
+        { title: "Top Hero Section ", icon: <CiEdit />, path: "/TopHeroSection" },
+        { title: "Take Action Now", path: "/takeactionnow" },
+        { title: "We Are Proud ", icon: <CiEdit />, path: "/weareproud" },
+
         // { title: "Our Services", path: "/ourservicest" },
         // { title: "Courses", path: "/coursest" },
         // { title: "Our Team", path: "/ourteamt" },
@@ -57,7 +60,7 @@ const Sidebar = () => {
     <div className="lg:flex sticky hidden flex-col gap-8 ">
       {/* Sidebar Header */}
       <div className="flex flex-col items-center justify-center py-8">
-        <h1 className="text-[#415FF2] font-bold text-2xl">Abhyam</h1>
+        <h1 className="text-primary font-bold text-2xl tracking-wider">Abhyam</h1>
       </div>
 
       {/* Sidebar Menu */}
@@ -70,7 +73,7 @@ const Sidebar = () => {
                   ? setShowDropdown(showDropdown === index ? null : index)
                   : null
               }
-              className={`flex items-center gap-4  hover:text-[#415FF2] hover:bg-gray-100 rounded-md d cursor-pointer ${
+              className={`flex items-center gap-4  hover:text-primary hover:bg-gray-100 rounded-md d cursor-pointer ${
                 item.subdata ? "justify-between" : ""
               }`}
             >

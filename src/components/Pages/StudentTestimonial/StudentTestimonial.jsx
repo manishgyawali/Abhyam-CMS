@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup"; // Import Yup for validation
@@ -12,8 +13,7 @@ import { IoPencil } from 'react-icons/io5';
 
 const fields = [
   { name: "title", type: "text", placeholder: "Title" },
-  { name: "subtitle", type: "text", placeholder: "Subtitle" },
-  { name: "description", type: "text", placeholder: "Description" },
+  
 ];
 
 
@@ -26,12 +26,12 @@ const validationSchema = Yup.object().shape({
 
 const notify = () => toast("Data submitted!");
 
-const Banner = () => {
+const StudentTestimonial = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
     title: '',
-    subtitle: '',
+ 
     file: null,
     editorContent: ''
   });
@@ -39,7 +39,7 @@ const Banner = () => {
   const Data = [
     {
       title: "Your Global Education Partner for Visa Success",
-      subtitle: "Guiding you through every step of the process—student visas, test preparation, and beyond",
+      description: "Guiding you through every step of the process—student visas, test preparation, and beyond",
       image: "/Images/paypal.png",
     },
   ];
@@ -48,7 +48,7 @@ const Banner = () => {
     // Set the form data with the item data when Edit button is clicked
     setFormData({
       title: Data[index].title,
-      subtitle: Data[index].subtitle,
+
       file: null,
       editorContent: '' 
     });
@@ -85,7 +85,7 @@ const Banner = () => {
     setIsEditMode(false); // Exit edit mode after submitting
     setFormData({
       title: '',
-      subtitle: '',
+
       file: null,
       editorContent: ''
     }); // Reset form data
@@ -101,7 +101,7 @@ const Banner = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Banner' : 'Add Banner'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit StudentTestimonial' : 'Add StudentTestimonial'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -157,7 +157,7 @@ const Banner = () => {
               <tr className="bg-gray-200 font-semibold">
                 <th className="p-4 text-left">Image</th>
                 <th className="p-4 text-left">Title</th>
-                <th className="p-4 text-left">Subtitle</th>
+                <th className="p-4 text-left">Description</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
@@ -172,7 +172,7 @@ const Banner = () => {
                     />
                   </td>
                   <td className="p-4">{val.title}</td>
-                  <td className="p-4">{val.subtitle}</td>
+                  <td className="p-4">{val.description}</td>
                   <td className="p-4 text-center">
                     <button
                       onClick={() => handleEdit(index)}
@@ -191,4 +191,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default StudentTestimonial;

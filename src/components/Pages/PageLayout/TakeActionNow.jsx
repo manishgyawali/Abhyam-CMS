@@ -13,7 +13,6 @@ import { IoPencil } from 'react-icons/io5';
 const fields = [
   { name: "title", type: "text", placeholder: "Title" },
   { name: "subtitle", type: "text", placeholder: "Subtitle" },
-  { name: "description", type: "text", placeholder: "Description" },
 ];
 
 
@@ -26,7 +25,7 @@ const validationSchema = Yup.object().shape({
 
 const notify = () => toast("Data submitted!");
 
-const Banner = () => {
+const TakeActionNow = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
@@ -40,6 +39,7 @@ const Banner = () => {
     {
       title: "Your Global Education Partner for Visa Success",
       subtitle: "Guiding you through every step of the process—student visas, test preparation, and beyond",
+      description:"Guiding you through every step of the process—student visas, test preparation, and beyond",
       image: "/Images/paypal.png",
     },
   ];
@@ -101,7 +101,7 @@ const Banner = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Banner' : 'Add Banner'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit TakeActionNow' : 'Add TakeActionNow'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -158,6 +158,7 @@ const Banner = () => {
                 <th className="p-4 text-left">Image</th>
                 <th className="p-4 text-left">Title</th>
                 <th className="p-4 text-left">Subtitle</th>
+                <th className="p-4 text-left">Description</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
@@ -173,6 +174,7 @@ const Banner = () => {
                   </td>
                   <td className="p-4">{val.title}</td>
                   <td className="p-4">{val.subtitle}</td>
+                  <td className="p-4">{val.description}</td>
                   <td className="p-4 text-center">
                     <button
                       onClick={() => handleEdit(index)}
@@ -191,4 +193,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default TakeActionNow;

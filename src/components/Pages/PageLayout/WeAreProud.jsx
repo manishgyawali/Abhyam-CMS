@@ -12,35 +12,31 @@ import { IoPencil } from 'react-icons/io5';
 
 const fields = [
   { name: "title", type: "text", placeholder: "Title" },
-  { name: "subtitle", type: "text", placeholder: "Subtitle" },
-  { name: "description", type: "text", placeholder: "Description" },
+
 ];
 
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("Title is required!"),
-  subtitle: Yup.string().required("Subtitle is required!"),
-  editorContent: Yup.string().required("Description is required!"),
+
   file: Yup.mixed().required("File is required!")
 });
 
-const notify = () => toast("Data submitted!");
+const notify = () => toast(" Data submitted!");
 
-const Banner = () => {
+const WeAreProud = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
     title: '',
-    subtitle: '',
-    file: null,
+ 
     editorContent: ''
   });
 
   const Data = [
     {
       title: "Your Global Education Partner for Visa Success",
-      subtitle: "Guiding you through every step of the process—student visas, test preparation, and beyond",
-      image: "/Images/paypal.png",
+      description: "Guiding you through every step of the process—student visas, test preparation, and beyond",
     },
   ];
 
@@ -48,8 +44,7 @@ const Banner = () => {
     // Set the form data with the item data when Edit button is clicked
     setFormData({
       title: Data[index].title,
-      subtitle: Data[index].subtitle,
-      file: null,
+  
       editorContent: '' 
     });
     setEditIndex(index); 
@@ -63,7 +58,7 @@ const Banner = () => {
         .patch(`http://localhost:3000/banner/${editIndex}`, values) // Modify with the correct URL for update
         .then((result) => {
           console.log(result);
-          toast.success(" Data updated!");
+          toast.success(" data updated!");
         })
         .catch((error) => {
           console.log(error);
@@ -75,7 +70,7 @@ const Banner = () => {
         .post("http://localhost:3000/banner", values)
         .then((result) => {
           console.log(result);
-          toast.success("Data submitted!");
+          toast.success(" data submitted!");
         })
         .catch((error) => {
           console.log(error);
@@ -85,8 +80,7 @@ const Banner = () => {
     setIsEditMode(false); // Exit edit mode after submitting
     setFormData({
       title: '',
-      subtitle: '',
-      file: null,
+    
       editorContent: ''
     }); // Reset form data
   };
@@ -101,7 +95,7 @@ const Banner = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Banner' : 'Add Banner'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit WeAreProud' : 'Add WeAreProud'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -126,13 +120,7 @@ const Banner = () => {
                   <div className="text-red-500">{errors.editorContent}</div>
                 )}
 
-                <FileUpload
-                  name="file"
-                  onChange={(event) => {
-                    setFieldValue("file", event.target.files[0]);
-                  }}
-                />
-                {errors.file && <div className="text-red-500">{errors.file}</div>}
+          
 
                 <div className="text-right">
                   <button
@@ -155,24 +143,17 @@ const Banner = () => {
           <table className="w-full bg-white rounded shadow">
             <thead>
               <tr className="bg-gray-200 font-semibold">
-                <th className="p-4 text-left">Image</th>
                 <th className="p-4 text-left">Title</th>
-                <th className="p-4 text-left">Subtitle</th>
+                <th className="p-4 text-left">Description</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
               {Data.map((val, index) => (
                 <tr key={index} className="border-b">
-                  <td className="p-4">
-                    <img
-                      src={val.image}
-                      alt={val.title}
-                      className="h-20 w-20 rounded object-cover"
-                    />
-                  </td>
+               
                   <td className="p-4">{val.title}</td>
-                  <td className="p-4">{val.subtitle}</td>
+                  <td className="p-4">{val.description}</td>
                   <td className="p-4 text-center">
                     <button
                       onClick={() => handleEdit(index)}
@@ -191,4 +172,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default WeAreProud;

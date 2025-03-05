@@ -3,17 +3,17 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup"; // Import Yup for validation
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"; // Import the Toastify CSS
-import FileUpload from "../../Common/FileUpload/FileUpload";
-import Editor from "../../Common/Editor/Editor";
 import axios from 'axios';
-import InputField from '../../Common/InputField/InputField';
 import { IoPencil } from 'react-icons/io5';
+import FileUpload from './../../../Common/FileUpload/FileUpload';
+import InputField from './../../../Common/InputField/InputField';
 
 
 const fields = [
+    { name: "page", type: "text", placeholder: "page" },
+
   { name: "title", type: "text", placeholder: "Title" },
   { name: "subtitle", type: "text", placeholder: "Subtitle" },
-  { name: "description", type: "text", placeholder: "Description" },
 ];
 
 
@@ -24,16 +24,16 @@ const validationSchema = Yup.object().shape({
   file: Yup.mixed().required("File is required!")
 });
 
-const notify = () => toast("Data submitted!");
+const notify = () => toast(" data submitted!");
 
-const Banner = () => {
+const TopHeroSection = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
     file: null,
-    editorContent: ''
+
   });
 
   const Data = [
@@ -63,7 +63,7 @@ const Banner = () => {
         .patch(`http://localhost:3000/banner/${editIndex}`, values) // Modify with the correct URL for update
         .then((result) => {
           console.log(result);
-          toast.success(" Data updated!");
+          toast.success(" data updated!");
         })
         .catch((error) => {
           console.log(error);
@@ -75,7 +75,7 @@ const Banner = () => {
         .post("http://localhost:3000/banner", values)
         .then((result) => {
           console.log(result);
-          toast.success("Data submitted!");
+          toast.success(" data submitted!");
         })
         .catch((error) => {
           console.log(error);
@@ -87,7 +87,7 @@ const Banner = () => {
       title: '',
       subtitle: '',
       file: null,
-      editorContent: ''
+
     }); // Reset form data
   };
 
@@ -101,7 +101,7 @@ const Banner = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Banner' : 'Add Banner'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit TopHeroSection' : 'Add TopHeroSection'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -118,13 +118,6 @@ const Banner = () => {
                   </div>
                 ))}
 
-                <Editor
-                  name="editorContent"
-                  onChange={(content) => setFieldValue("editorContent", content)}
-                />
-                {errors.editorContent && (
-                  <div className="text-red-500">{errors.editorContent}</div>
-                )}
 
                 <FileUpload
                   name="file"
@@ -191,4 +184,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default TopHeroSection;
