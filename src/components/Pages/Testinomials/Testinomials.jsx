@@ -157,6 +157,7 @@ const Testinomials = () => {
                 <th className="p-4 text-left">Image</th>
                 <th className="p-4 text-left">Title</th>
                 <th className="p-4 text-left">Description</th>
+                <th className="p-4 text-left">Description</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
