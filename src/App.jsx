@@ -11,13 +11,15 @@ import Weareproudtop from "./components/Pages/Weareproudtop/Weareproudtop";
 import Blogandupdatestop from "./components/Pages/Blogandupdatestop/Blogandupdatestop";
 import Eventsandupdatestop from "./components/Pages/Eventsandupdatestop/Eventsandupdatestop";
 import TopHeroSection from "./components/Pages/PageLayout/TopHeroSection/TopHeroSection";
-import TakeActionNow from "./components/Pages/PageLayout/TakeActionNow";
 import WeAreProud from "./components/Pages/PageLayout/WeAreProud";
 import StudentTestimonial from "./components/Pages/StudentTestimonial/StudentTestimonial";
 import Ourpartners from "./components/Pages/Ourpartners/Ourpartners";
 import Testinomials from "./components/Pages/Testinomials/Testinomials";
+import Herotestinomialssection from "./components/Pages/Herotestinomialssection/Herotestinomialssection";
+import TakeActionNow from "./components/Pages/TakeActionNow/TakeActionNow";
 
-function App() {``
+function App() {
+  ``;
   return (
     <div>
       <Router>
@@ -44,10 +46,7 @@ function App() {``
                   element={<Milestonesection />}
                 />
                 <Route path="/whychooseus" element={<Whychooseus />} />
-                <Route
-                  path="/blogandupdatestop"
-                  element={<Blogandupdatestop />}
-                />
+                <Route path="/blogandupdates" element={<Blogandupdatestop />} />
                 <Route
                   path="/eventsandupdatestop"
                   element={<Eventsandupdatestop />}
@@ -61,6 +60,11 @@ function App() {``
                 />
                 <Route path="/ourpartners" element={<Ourpartners />} />
                 <Route path="/testimonials" element={<Testinomials />} />
+                <Route
+                  path="/herotestinomialssection"
+                  element={<Herotestinomialssection />}
+                />
+                {/* <Route path="/takeactionnow" element={<TakeActionNow />} /> */}
               </Routes>
 
               <Footer />

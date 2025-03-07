@@ -15,14 +15,14 @@ const Sidebar = () => {
     { title: "We are proudtop ", icon: <PiCertificate />, path: "/weareproudtop" },
     { title: "Milestonesection ", icon: <CiEdit />, path: "/milestonesection" },
     { title: "Why Choose Us", icon: <FaHandsHelping />, path: "/whychooseus" },
-    { title: "Blog and updates top ", icon: <CiEdit />, path: "/blogandupdatestop" },
+    { title: "Blog and updates  ", icon: <CiEdit />, path: "/blogandupdates" },
     { title: "Events and updates top", icon: <FaHandsHelping />, path: "/eventsandupdatestop" },
-    { title: "StudentTestimonial", icon: <FaHandsHelping />, path: "/studenttestimonial" },
+    { title: "Student Testimonial", icon: <FaHandsHelping />, path: "/studenttestimonial" },
 
     {title: "Our Partners", icon: <FaRegComments />, path: "/ourpartners"},
     {title: "Testimonials", icon: <FaRegImages />, path: "/testimonials"},
-
-
+    {title: "Hero Testinomials Section", icon: <FaRegComments />, path: "/herotestinomialssection"},
+        {title: "Take Action Now", icon: <FaRegComments />, path: "/takeactionnow"},
  {
       title: "Page Layout",
       icon: <CiViewBoard />,
