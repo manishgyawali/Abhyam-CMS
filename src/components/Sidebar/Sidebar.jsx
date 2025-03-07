@@ -3,11 +3,9 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { IoHomeOutline, IoPersonCircleOutline } from "react-icons/io5";
 import { CiViewBoard, CiEdit } from "react-icons/ci";
 import { FaRegImages, FaRegComments, FaHandsHelping } from "react-icons/fa";
-import { MdOutlineContactMail, MdOutlineEventNote } from "react-icons/md";
 
 import { PiMapPinLine, PiCertificate } from "react-icons/pi";
 import { Link } from "react-router-dom";
-import Milestonesection from "../Pages/Milestonesection/Milestonesection";
 
 const Sidebar = () => {
   const sidebarData = [
@@ -20,8 +18,12 @@ const Sidebar = () => {
     { title: "Blog and updates top ", icon: <CiEdit />, path: "/blogandupdatestop" },
     { title: "Events and updates top", icon: <FaHandsHelping />, path: "/eventsandupdatestop" },
     { title: "StudentTestimonial", icon: <FaHandsHelping />, path: "/studenttestimonial" },
-   
-   {
+
+    {title: "Our Partners", icon: <FaRegComments />, path: "/ourpartners"},
+    {title: "Testimonials", icon: <FaRegImages />, path: "/testimonials"},
+
+
+ {
       title: "Page Layout",
       icon: <CiViewBoard />,
       subdata: [

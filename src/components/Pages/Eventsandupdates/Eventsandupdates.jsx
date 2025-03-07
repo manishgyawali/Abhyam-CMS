@@ -24,9 +24,9 @@ const validationSchema = Yup.object().shape({
   file: Yup.mixed().required("File is required!")
 });
 
-const notify = () => toast("Data submitted!");
+const notify = () => toast("Banner data submitted!");
 
-const Banner = () => {
+const Eventsandupdates = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
@@ -63,11 +63,11 @@ const Banner = () => {
         .patch(`http://localhost:3000/banner/${editIndex}`, values) // Modify with the correct URL for update
         .then((result) => {
           console.log(result);
-          toast.success(" Data updated!");
+          toast.success("Banner data updated!");
         })
         .catch((error) => {
           console.log(error);
-          toast.error("Failed to update  data!");
+          toast.error("Failed to update banner data!");
         });
     } else {
       // Add new banner
@@ -75,11 +75,11 @@ const Banner = () => {
         .post("http://localhost:3000/banner", values)
         .then((result) => {
           console.log(result);
-          toast.success("Data submitted!");
+          toast.success("Banner data submitted!");
         })
         .catch((error) => {
           console.log(error);
-          toast.error("Failed to submit  data!");
+          toast.error("Failed to submit banner data!");
         });
     }
     setIsEditMode(false); // Exit edit mode after submitting
@@ -137,7 +137,7 @@ const Banner = () => {
                 <div className="text-right">
                   <button
                     type="submit"
-                    className="px-4 cursor-pointer py-2 bg-primary text-white rounded-md"
+                    className="px-4 cursor-pointer py-2 bg-blue-500 text-white rounded-md"
                     disabled={isSubmitting}
                   >
                     {isEditMode ? 'Update' : 'Submit'}
@@ -147,7 +147,6 @@ const Banner = () => {
               </div>
             </div>
           </Form>
-          
         )}
       </Formik>
 
@@ -192,4 +191,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Eventsandupdates;

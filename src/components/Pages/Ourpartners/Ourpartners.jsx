@@ -12,8 +12,7 @@ import { IoPencil } from 'react-icons/io5';
 
 const fields = [
   { name: "title", type: "text", placeholder: "Title" },
-  { name: "subtitle", type: "text", placeholder: "Subtitle" },
-  { name: "description", type: "text", placeholder: "Description" },
+  
 ];
 
 
@@ -24,9 +23,9 @@ const validationSchema = Yup.object().shape({
   file: Yup.mixed().required("File is required!")
 });
 
-const notify = () => toast("Data submitted!");
+const notify = () => toast("Ourpartners data submitted!");
 
-const Banner = () => {
+const Ourpartners = () => {
   const [isEditMode, setIsEditMode] = useState(false); // Track whether we're editing
   const [editIndex, setEditIndex] = useState(null); // Track the index of the item we're editing
   const [formData, setFormData] = useState({
@@ -63,11 +62,11 @@ const Banner = () => {
         .patch(`http://localhost:3000/banner/${editIndex}`, values) // Modify with the correct URL for update
         .then((result) => {
           console.log(result);
-          toast.success(" Data updated!");
+          toast.success("Banner data updated!");
         })
         .catch((error) => {
           console.log(error);
-          toast.error("Failed to update  data!");
+          toast.error("Failed to update banner data!");
         });
     } else {
       // Add new banner
@@ -75,11 +74,11 @@ const Banner = () => {
         .post("http://localhost:3000/banner", values)
         .then((result) => {
           console.log(result);
-          toast.success("Data submitted!");
+          toast.success("Banner data submitted!");
         })
         .catch((error) => {
           console.log(error);
-          toast.error("Failed to submit  data!");
+          toast.error("Failed to submit banner data!");
         });
     }
     setIsEditMode(false); // Exit edit mode after submitting
@@ -101,7 +100,7 @@ const Banner = () => {
         {({ setFieldValue, handleSubmit, isSubmitting, errors }) => (
           <Form>
             <div className="py-10 px-6 flex flex-col gap-6 bg-[#F9FAFB] rounded-2xl">
-              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Banner' : 'Add Banner'}</h1>
+              <h1 className="text-2xl font-semibold">{isEditMode ? 'Edit Ourpartners' : 'Add Ourpartners'}</h1>
               <div className="p-6 bg-white rounded-md flex flex-col gap-8 shadow-md">
                 {fields.map((field, i) => (
                   <div key={i} className="flex flex-col">
@@ -137,7 +136,7 @@ const Banner = () => {
                 <div className="text-right">
                   <button
                     type="submit"
-                    className="px-4 cursor-pointer py-2 bg-primary text-white rounded-md"
+                    className="px-4 cursor-pointer py-2 bg-blue-500 text-white rounded-md"
                     disabled={isSubmitting}
                   >
                     {isEditMode ? 'Update' : 'Submit'}
@@ -147,7 +146,6 @@ const Banner = () => {
               </div>
             </div>
           </Form>
-          
         )}
       </Formik>
 
@@ -158,7 +156,7 @@ const Banner = () => {
               <tr className="bg-gray-200 font-semibold">
                 <th className="p-4 text-left">Image</th>
                 <th className="p-4 text-left">Title</th>
-                <th className="p-4 text-left">Subtitle</th>
+                <th className="p-4 text-left">Description</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
@@ -192,4 +190,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Ourpartners;

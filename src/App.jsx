@@ -15,6 +15,8 @@ import TopHeroSection from "./components/Pages/PageLayout/TopHeroSection/TopHero
 import TakeActionNow from "./components/Pages/PageLayout/TakeActionNow";
 import WeAreProud from "./components/Pages/PageLayout/WeAreProud";
 import StudentTestimonial from "./components/Pages/StudentTestimonial/StudentTestimonial";
+import Ourpartners from "./components/Pages/Ourpartners/Ourpartners";
+import Testinomials from "./components/Pages/Testinomials/Testinomials";
 
 function App() {
   return (
@@ -46,7 +48,11 @@ function App() {
               <Route path="/takeactionnow" element={<TakeActionNow />} />
               <Route path="/weareproud" element={<WeAreProud />}/>
               <Route path="/studenttestimonial" element={<StudentTestimonial />} />
-              </Routes>
+              <Route path="/ourpartners" element={<Ourpartners />} />
+              <Route path="/testimonials" element={<Testinomials />} />
+              
+
+             </Routes>
               <Footer />
             </div>
           </div>
