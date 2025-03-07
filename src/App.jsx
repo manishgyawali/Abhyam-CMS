@@ -2,9 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Common/Navigation/Navigation";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React from "react";
-import Footer from './components/Common/Footer/Footer';
-import Banner from './components/Pages/Banner/Banner';
-import Popularcourses from "./components/Pages/Popularcourses/Popularcourses";
+import Footer from "./components/Common/Footer/Footer";
+import Banner from "./components/Pages/Banner/Banner";
 import Milestonesection from "./components/Pages/Milestonesection/Milestonesection";
 import Whychooseus from "./components/Pages/Whychooseus/Whychooseus";
 import Aboutus from "./components/Pages/AboutUs/AboutUs";
@@ -18,7 +17,7 @@ import StudentTestimonial from "./components/Pages/StudentTestimonial/StudentTes
 import Ourpartners from "./components/Pages/Ourpartners/Ourpartners";
 import Testinomials from "./components/Pages/Testinomials/Testinomials";
 
-function App() {
+function App() {``
   return (
     <div>
       <Router>
@@ -36,23 +35,34 @@ function App() {
             {/* Main Content */}
             <div className="lg:flex-1 absolute  w-full  top-36 px-8 scroll overflow-scroll">
               <Routes>
-              {/* <Route path="/" element={<Dashboard />} /> */}
-              <Route path="/banner" element={<Banner />} />
-              <Route path="/aboutus" element={<Aboutus />} />
-              <Route path="/weareproudtop" element={<Weareproudtop />} />
-              <Route path="/milestonesection" element={<Milestonesection />} />
-              <Route path="/whychooseus" element={<Whychooseus />} />
-              <Route path="/blogandupdatestop" element={<Blogandupdatestop />}/>
-              <Route path="/eventsandupdatestop" element={<Eventsandupdatestop />} />
-              <Route path="/topherosection" element={<TopHeroSection />}/>
-              <Route path="/takeactionnow" element={<TakeActionNow />} />
-              <Route path="/weareproud" element={<WeAreProud />}/>
-              <Route path="/studenttestimonial" element={<StudentTestimonial />} />
-              <Route path="/ourpartners" element={<Ourpartners />} />
-              <Route path="/testimonials" element={<Testinomials />} />
-              
+                {/* <Route path="/" element={<Dashboard />} /> */}
+                <Route path="/banner" element={<Banner />} />
+                <Route path="/aboutus" element={<Aboutus />} />
+                <Route path="/weareproudtop" element={<Weareproudtop />} />
+                <Route
+                  path="/milestonesection"
+                  element={<Milestonesection />}
+                />
+                <Route path="/whychooseus" element={<Whychooseus />} />
+                <Route
+                  path="/blogandupdatestop"
+                  element={<Blogandupdatestop />}
+                />
+                <Route
+                  path="/eventsandupdatestop"
+                  element={<Eventsandupdatestop />}
+                />
+                <Route path="/topherosection" element={<TopHeroSection />} />
+                <Route path="/takeactionnow" element={<TakeActionNow />} />
+                <Route path="/weareproud" element={<WeAreProud />} />
+                <Route
+                  path="/studenttestimonial"
+                  element={<StudentTestimonial />}
+                />
+                <Route path="/ourpartners" element={<Ourpartners />} />
+                <Route path="/testimonials" element={<Testinomials />} />
+              </Routes>
 
-             </Routes>
               <Footer />
             </div>
           </div>
